@@ -1,0 +1,29 @@
+<textual-input>
+    
+    <input value={bind('value')} type={opts.type} 
+           onchange={view.refresh} 
+           onkeyup={view.refresh} 
+           onmousedown={view.refresh} />
+
+    <!-- -------------------------- -->
+
+    <script>
+
+        input.view =
+        {
+            refresh: function(e)
+            {
+                input.view.update(e.srcElement.value);
+            },
+
+            update: function(value)
+            {
+                bind('value', value);
+                
+                riot.update();
+            }
+        };
+
+    </script>
+
+</textual-input>

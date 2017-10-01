@@ -1,0 +1,74 @@
+body,
+a
+{
+    background: #fdfdef;
+}
+
+body,
+a,
+input,
+frame-header menu-widget > .menu
+{
+    color: #444;
+}
+
+.separator
+{
+    border-color: #ccc;
+}
+
+frame-header clock-widget,
+frame-header menu-widget > i
+{
+    color: #efefef;
+}
+
+frame-header clock-widget > *
+{
+    background: transparent;
+}
+
+frame-header menu-widget > .menu
+{
+    background: #ededef;
+}
+
+frame-header menu-widget > .menu > .section
+{
+    border-color: #ccc;
+}
+
+frame-header menu-widget > .menu > *:not(.section)
+{
+    color:#777;
+}
+
+frame-header menu-widget
+{
+    background: #444;
+}
+
+frame-header clock-widget,
+frame-footer
+{
+    background: #555;
+}
+
+frame-header menu-widget .close
+{
+    background: #777;
+}
+
+frame-header clock-widget,
+frame-footer,
+frame-header menu-widget .close,
+frame-header menu-widget .close > *
+{
+    color: #fff !important;
+}
+
+clock-widget > *
+{
+    background: #ddd;
+}
+

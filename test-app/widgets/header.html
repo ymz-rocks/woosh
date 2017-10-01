@@ -1,0 +1,167 @@
+<frame-header class={view.style()}>
+
+    <h1>{context.model.lang.app.name}</h1> <!-- bind by selected language -->
+    
+    <nav>
+        <a href="#/welcome" class={view.nav.selected('welcome', true)}>Welcome</a>
+        <a href="#/about" class={view.nav.selected('about')}>About</a>
+    </nav>
+
+    <menu-widget toggle={view.menu.toggle.remote}> <!-- use custom content inside components and widgets -->
+        
+        <div class="section">
+            {context.model.lang.app.values.change}
+        </div>
+        <div>
+            {context.model.lang.app.values.first}<textual-input type="number" value="values.first" contextify } />
+            <br/>
+            {context.model.lang.app.values.second}<textual-input type="number" value="values.second" contextify } />
+        </div>
+
+        <div class="section">
+            {context.model.lang.menu.theme}
+        </div>
+        
+        <div class="theme">
+            <i each={color, name in parent.view.theme.collection}
+               class={context.services.theme.current == name ? '' : 'fresh' }
+               style={'background:' + color}
+               onclick={parent.parent.view.theme.change(name)}></i>
+        </div>
+
+        <div class="clock section" if={!parent.view.clock.changed}>
+            {context.model.lang.clock.settings}
+        </div>
+        <button class="clock" onclick={parent.view.clock.change} if={!parent.view.clock.changed}>
+            {context.model.lang.clock.format}
+        </button>
+
+        <div class="close" onclick={view.toggle}>
+            <i class="mdi mdi-close"></i><button>{context.model.lang.menu.close}</button>
+        </div>
+
+    </menu-widget>
+
+    <clock-widget config={view.clock.config} refresh={view.clock.refresh.remote} /> <!-- pass objects and functions to your own components and widgets -->
+
+    <!-- -------------------------- -->
+
+    <style>
+        frame-header.pin
+        {
+            position: fixed;
+        }
+
+        frame-header.pin ~ route > div[data-is]
+        {
+            padding-top: 4.68em;
+        }
+
+        frame-header .theme > i
+        {
+            display: inline-block;
+            width: 4em;
+            height: 2em;
+            margin: 0.5em;
+        }
+
+        frame-header .theme > i.fresh
+        {
+            cursor: pointer;
+            width: 2em;
+        }
+
+        menu-widget textual-input > input
+        {
+            float: right;
+            width: 7em;
+        }
+    </style>
+
+    <!-- -------------------------- -->
+
+    <script>
+        context.model.values.first += 50;
+        
+        header.view =
+        {
+            clock:
+            {
+                change: function()
+                {
+                    var menu = this; menu.view.toggle();
+
+                    header.view.clock.refresh.activate
+                    ({
+                        format: 'ko-KR'
+                    });
+
+                    header.view.clock.changed = true;
+                },
+
+                config: 
+                {
+                    format: context.model.time.format
+                },
+
+                refresh: remote()
+            },
+
+            menu:
+            {
+                toggle: remote()
+            },
+
+            nav:
+            {
+                selected: function(page, main)
+                {
+                    return (header.view.nav.page ? header.view.nav.page == page : main) ? 'selected' : '';
+                }
+            },
+
+            style: function()
+            {
+                return header.view.pin ? 'pin' : '';
+            },
+
+            theme:
+            {
+                change: function(name)
+                {
+                    return function() { context.services.theme.load(name); header.view.menu.toggle.activate() };
+                },
+
+                collection:
+                {
+                    'action-light-strawberry': '#ff443a',
+                    'action-light-oceanic': '#269dff',
+                    'action-light-summertime': '#ffd726'
+                }
+            }
+        };
+
+        context.events.listen('header-menu_toggle', function()
+        {
+            header.view.menu.toggle.activate();
+            header.update();
+        });
+
+        context.events.listen('header_pin', function(callback)
+        {
+            header.view.pin = !header.view.pin;
+
+            callback(header.view.pin);
+
+            header.update();
+        });
+
+        context.events.listen('app_route', function()
+        {
+            header.view.nav.page = context.route.page;
+            header.update();
+        });
+
+    </script>
+
+</frame-header>

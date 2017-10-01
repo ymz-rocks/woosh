@@ -1,0 +1,41 @@
+a,
+button
+{
+    color: #2374ff !important;
+}
+
+frame-header
+{
+    background: #ff443a;
+}
+
+frame-header > nav,
+frame-footer > button.config
+{
+    background: #ff231c;
+}
+
+
+frame-header,
+frame-header > nav > a,
+frame-footer > button.config > i
+{
+    color: #fefefe !important;
+}
+
+input,
+frame-header > nav > a.selected,
+div[data-is$=page] > h1
+{
+    border-color: #4f92ff;
+}
+
+
+@media (max-width: 780px)
+{
+    frame-header > nav > a
+    {
+        border-color: #4f92ff;
+    }
+}
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test App</title>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <script src="../lib/riot+compiler.min.js"></script>
+    <script src="../lib/route+tag.min.js"></script>
+    <script src="../lib/woosh.min.js"></script>
+
+    <script>
+
+        woosh.start(function(context, modelize)
+        {
+            context.language('en');
+
+        }).then(function(context)
+        {
+            context.services.time.start();
+
+            context.services.theme.load('action-light', 'action-light-strawberry');
+        });
+
+    </script>
+
+</head>
+<body>
+    <app> <!-- app frame should contain the minimal set of partials + routing.. that's all -->
+        <router>
+            <frame-header></frame-header>
+
+            <route path></route>
+            <route path="about/*"></route>
+
+            <frame-footer></frame-footer>
+        </router>
+    </app>
+</body>
+</html>

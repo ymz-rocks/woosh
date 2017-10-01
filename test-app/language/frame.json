@@ -1,0 +1,28 @@
+{
+    "en":
+    {
+        "app":
+        {
+            "name": "Test App",
+            "values":
+            {
+                "title": "Global App Values",
+                "change": "Change App Values",
+                "first": "First Value",
+                "second": "Second Value"
+            }
+        },
+
+        "menu":
+        {
+            "close": "Close Menu",
+            "theme": "Control App Theme"
+        },
+        
+        "clock":
+        {
+            "settings": "Clock Settings",
+            "format": "Format to Korean Style!!!"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "navigation":
+    {
+        "sample": "#/about/test?name=alice&score=7"
+    }
+}

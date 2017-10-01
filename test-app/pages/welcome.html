@@ -1,0 +1,60 @@
+<welcome-page>
+    
+    <h1>{model.lang.title}</h1>
+    {model.lang.info[0]}
+    <br/>
+    {model.lang.info[1]}
+    <br/>
+    {model.lang.info[2]}
+    <div class="separator"></div>
+    <h3>{model.lang.intro.title}</h3>
+    {model.lang.intro.info}
+    <div class="separator"></div>
+    <h3>{model.lang.values.title}</h3>
+    <div class="value">
+        <span>{model.lang.values.local}: <b>{model.value}</b></span>
+        <br/>
+        <textual-input value="value" } />
+    </div>
+    <div class="value">
+        <span>{model.lang.values.global}: <b>{context.model.values.first}</b></span>
+        <br/>
+        <textual-input value="values.first" type="number" contextify } />
+    </div>
+    <div class="separator"></div>
+    <h3>{model.lang.partials.title}</h3>
+    <div>
+        {model.lang.partials.info[0]}
+        <div>{model.lang.partials.info[1]}</div>
+        <br/>
+        {model.lang.partials.sample}<clock-widget />
+        <br/>
+    </div>
+    <div class="separator"></div>
+    <h3>{model.lang.remote.title}</h3>
+    <div>
+        {model.lang.remote.info[0]}
+        <b>{model.lang.remote.info[1]}</b>
+        <div>{model.lang.remote.info[2]}</div>
+    </div>
+    <br/>
+    
+    <!-- -------------------------- -->
+
+    <style>
+        
+        div.value
+        {
+            display: inline-block;
+            margin: 0.5em;
+        }
+
+    </style>
+
+    <!-- -------------------------- -->
+
+    <script>
+        
+    </script> <!-- you must incluse a script tag inside every component or widget (even if it's empty!) -->
+
+</welcome-page>
