@@ -1,0 +1,42 @@
+<frame-footer>
+    
+    <div class="info">
+        {context.model.lang.app.values.title} (
+        {context.model.lang.app.values.first}: <b>{context.model.values.first}</b>&nbsp;
+        {context.model.lang.app.values.second}: <b>{context.model.values.second}</b>
+        )
+    </div>
+   
+    <button class="config" onclick={view.header.pin}>
+        <i class={view.config.style()}></i> <!-- set conditional style using functions -->
+    </button>
+
+    <!-- -------------------------- -->
+
+    <script>
+        footer.view =
+        {
+            config:
+            {
+                style: function()
+                {
+                    return 'mdi mdi-pin' + (footer.view.config.pin ? '-off' : ' mdi-rotate-45');
+                }
+            },
+
+            header:
+            {
+                pin: function()
+                {
+                    context.events.trigger('header_pin', function(pin) // trigger a remote action on the frame-header element
+                    {
+                        footer.view.config.pin = pin;
+                        footer.update();
+                    });
+                }
+            }
+        };
+
+    </script>
+    
+</frame-footer>

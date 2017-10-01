@@ -1,0 +1,50 @@
+<about-page>
+    
+    <h1>{model.lang.title}</h1>
+    {model.lang.info[0]}
+    <br/>
+    {model.lang.info[1]}
+    <br/>
+    <b>{model.lang.info[2]}</b>
+    {model.lang.info[3]} <a href={model.navigation.sample}>{model.navigation.sample}</a>
+    <br/>
+    <div if={model.nav}>
+        <div>
+            {model.lang.nav.page}:
+            <b>{model.nav.page}</b>
+        </div>
+
+        <div if={model.nav.action}>
+            {model.lang.nav.action}:
+            <b>{model.nav.action}</b>
+        </div>
+
+        <div if={model.nav.query}>
+            <div>{model.lang.nav.query}:</div>
+            <ul each={value, name in model.nav.query}>
+                <li>{name}: <b>{value}</b></li>
+            </ul>
+           
+        </div>
+    </div>
+    
+    <br/>
+    <button onclick={nav('welcome', ':)')}>{model.lang.nav.welcome}</button>
+
+    <!-- -------------------------- -->
+    
+    <script>
+        about.nav = function(name, title)
+        {
+            return function() { route(name, title) };
+        };
+
+        context.events.listen('app_route', function()
+        {
+            about.model.nav = context.route;
+
+            about.update();
+        });
+    </script>
+
+</about-page>

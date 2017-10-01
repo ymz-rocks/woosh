@@ -1,0 +1,42 @@
+<clock-widget>
+
+    <div>{view.time}</div>
+    <div>{view.date}</div>
+
+    <!-- -------------------------- -->
+
+    <script>
+    
+        function refresh(now)
+        {
+            if (!(clock.view.config instanceof Object)) return;
+
+            var format = clock.view.config.format;
+            
+            clock.view.time = now.toLocaleTimeString(format);
+            clock.view.date = now.toLocaleDateString(format);
+
+            clock.update();
+        }
+
+        clock.view =
+        {
+            refresh: function(config)
+            {
+                clock.view.config = config;
+
+                refresh(new Date());
+            }
+        };
+
+        context.services.remote.register(clock, 'refresh', clock.view.refresh); // register a remote listener - other parts of the application will be able to trigger the `refresh` function
+
+        context.services.time.tick(refresh); // hook to `time` service - every tick wil trigger the clock refresh function
+
+        clock.view.config = opts.config || { format : 'en-US' };
+
+    </script>
+    
+</clock-widget>
+
+

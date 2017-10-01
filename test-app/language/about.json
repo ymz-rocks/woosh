@@ -1,0 +1,20 @@
+{
+    "en":
+    {
+        "title": "About Page",
+        "info": 
+        [ 
+            "There is not much to see here... Just a sample of a single-page app navigation.", 
+            "However, you can play with the url of the page and observe the navigation stats.",
+            "For instance:",
+            "Update this page url to"
+        ],
+        "nav":
+        {
+            "welcome": "Navigate back to `Welcome` page",
+            "page": "Page",
+            "action": "Action",
+            "query": "Query"
+        }
+    }
+}

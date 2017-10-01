@@ -1,0 +1,39 @@
+<menu-widget>
+    
+    <i class={view.icon.style()} onclick={view.toggle}></i>
+    <div class="menu" show={view.render()}>
+        <yield />
+    </div>
+
+    <!-- -------------------------- -->
+
+    <script>
+
+        menu.view =
+        {
+            icon:
+            {
+                style: function()
+                {
+                    return 'mdi mdi-settings' + (menu.view.active ? ' mdi-spin' : '');
+                }
+            },
+
+            render: function()
+            {
+                return menu.view.active;
+            },
+
+            toggle: function()
+            {
+                menu.view.active = !menu.view.active;
+            }
+
+            
+        };
+
+        context.services.remote.register(menu, 'toggle', menu.view.toggle);
+
+    </script>
+
+</menu-widget>

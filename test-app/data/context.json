@@ -1,0 +1,12 @@
+{
+    "time":
+    {
+        "format": "en-US"
+    },
+
+    "values":
+    {
+        "first": 100,
+        "second": 200
+    }
+}

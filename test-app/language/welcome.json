@@ -1,0 +1,44 @@
+{
+    "en":
+    {
+        "title": "Welcome Page",
+        "info": 
+        [ 
+            "This is a test application, build with Riot.js (as a core library) and Woosh (as a top-level framework).", 
+            "Feel free to explore this project - it may suit your needs if you intend to build a modern website, hybrid mobile app or something similar.", 
+            "Enjoy :)" 
+        ],
+        "intro":
+        {
+            "title": "First - Let's Play!",
+            "info": "This is a very minimal app, yet it contains many powerful tools to assist you develop a modern app. Play with the interface first, Read whatever written here later..."
+        },
+        "partials":
+        {
+            "title": "Partials - Components & Widgets",
+            "info": 
+            [ 
+                "Woosh allows you to split your visual sections (partials) into components and widgets. To make a long story short:", 
+                "Components allow you to control and store a portion of your app information (using private model), while widgets not. That is why widgets are more lightweight then components (so... if you are not intend to manipulate data please prefer using a widget)"
+            ],
+            "sample": "This is a clock widget"
+        },
+        "remote":
+        {
+            "title": "Remote Control",
+            "info":
+            [ 
+                "With woosh you can control behaviors remotely!", "For instance:", 
+                "scroll the page and click on the `pin` icon (located in this page footer). The pin triggers a fucntion that belongs to the header" 
+            ]
+        },
+        "values":
+        {
+            "title": "View & Edit Values",
+            "local": "Local Value",
+            "global": "Global Value"
+        }
+    },
+
+    "value": "Hello :)"
+}

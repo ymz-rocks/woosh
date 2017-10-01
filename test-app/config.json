@@ -1,0 +1,87 @@
+{
+    "boot":
+    {
+        "model": [ "data/context.json", "language/frame.json" ],
+
+        "components": [ "textual-input" ],
+        "widgets": [ "frame-header", "frame-footer", "clock-widget", "menu-widget" ],
+        "services": [ "time", "theme" ],
+        "styles": [ "frame" ]
+    },
+
+    "components":
+    {
+        "textual-input": 
+        {
+            "name": "input",
+            "path": "input/textual.html"
+        }
+    },
+
+    "widgets":
+    {
+        "frame-header": 
+        {
+            "name": "header",
+            "path": "header.html"
+        },
+
+        "frame-footer":
+        {
+            "name": "footer",
+            "path": "footer.html"
+        },
+
+        "clock-widget":
+        {
+            "name": "clock",
+            "path": "clock.html"
+        },
+
+        "menu-widget": 
+        {
+            "name": "menu",
+            "path": "menu.html"
+        }
+    },
+
+    "services":
+    {
+        "time": 
+        {
+            "path": "time.js"
+        },
+
+        "theme":
+        {
+            "path": "theme.js"
+        }
+    },
+
+    "styles":
+    {
+        "frame": "styles/frame.css",
+
+        "action-light": "styles/action.light.css",
+        "action-light-oceanic": "styles/action.light.oceanic.css",
+        "action-light-strawberry": "styles/action.light.strawberry.css",
+        "action-light-summertime": "styles/action.light.summertime.css"
+    },
+
+    "pages":
+    {
+        "about":
+        {
+            "view": "about.html",
+            "model": [ "language/about.json", "data/about.json" ]
+        },
+
+        "welcome":
+        {
+            "default": true,
+            "view": "welcome.html",
+            "model": "language/welcome.json",
+            "components": [ "textual-input" ]
+        }
+    }
+}

@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500|Roboto:300,500');
+@import url('https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css');
+
+body,
+a
+{
+    padding: 0;
+    margin: 0;
+    font-size: 11pt;
+    margin-bottom: 4em;
+}
+
+br
+{
+    font-size: 1.5em;
+}
+
+b
+{
+    font-weight: 500;
+} 
+
+body,
+a,
+button
+{
+    font-family: Roboto;
+    font-weight: 300;
+}
+
+button,
+input
+{
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+a,
+button
+{
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input
+{
+    border-bottom: 0.1em solid;
+}
+
+ul
+{
+    margin: 0.1em;
+}
+
+.separator
+{
+    border-top: 0.05em solid;
+    margin: 1em 0;
+}
+
+div[data-is$=page]
+{
+    font-size: 1.2em;
+    line-height: 2;
+}
+
+div[data-is$=page] > h1,
+div[data-is$=page] > h2,
+div[data-is$=page] > h3,
+div[data-is$=page] > h4,
+div[data-is$=page] > h5,
+div[data-is$=page] > h6,
+div[data-is$=page] > h7
+{
+    font-weight: 500;
+    margin: 0.2em 0;
+}
+
+div[data-is$=page] > h1
+{
+    padding-bottom: 0.2em;
+    margin-bottom: 1em;
+    border-bottom: 0.1em solid;
+}
+
+frame-header
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 5em;
+}
+
+frame-header h1
+{
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 3em;
+
+    margin: 0;
+    margin-left: 0.5em;
+    padding-top: 0.1em;
+}
+
+frame-header > nav
+{
+    position: absolute;
+    display: block;
+
+    right: 0;
+    left: 16em;
+    height: 1em;
+    bottom: 0;
+
+    font-size: 1.4em;
+    padding: 0.5em 1em;
+}
+
+frame-header > nav > a
+{
+    position: relative;
+    font-size: 1em;
+    background: transparent;
+    margin: 0 0.5em;
+    text-decoration: none;
+    padding: 0 1em;
+    padding-bottom: 0.25em;
+    border: none;
+}
+
+frame-header > nav > a.selected
+{
+    border-bottom: 0.2em solid;
+}
+
+frame-header clock-widget, 
+frame-header menu-widget
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    user-select: none;
+}
+
+frame-header menu-widget
+{
+    width: 4em;
+    text-align: center;
+}
+
+frame-header menu-widget > i
+{
+    position: relative;
+    top: 0.6em;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+frame-header menu-widget > .menu
+{
+    position: absolute;
+    display: block;
+    top: 5em;
+    right: 0;
+    width: 14em;
+    padding: 1em;
+    padding-top: 1.5em;
+    padding-bottom: 5em;
+    text-align: left;
+}
+
+frame-header menu-widget > .menu > .section
+{
+    margin-top: 2.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.75em;
+    border-bottom: 0.1em solid;
+}
+
+frame-header menu-widget > .menu > .section:first-child
+{
+    margin-top: 0;
+}
+
+frame-header menu-widget > .menu > button
+{
+    font-size: 1em;
+    padding: 0;
+}
+
+frame-header menu-widget > .menu > *:not(.section)
+{
+    padding-left: 0.5em;
+}
+
+frame-header menu-widget > .menu input
+{
+    text-align: center;
+}
+
+frame-header menu-widget .close
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 3em;
+    text-align: center;
+}
+
+frame-header menu-widget .close > *
+{
+    padding-top: 0.75em;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+frame-header menu-widget .close > i
+{
+    position: relative;
+    top: 0.11em;
+    font-size: 1.5em;
+}
+
+frame-header clock-widget
+{
+    right: 4em;
+    width: 12em;
+    text-align: center;
+}
+
+frame-header clock-widget > *
+{
+    font-size: 1.5em;
+    padding-top: 0.25em;
+}
+
+frame-footer
+{
+    position: fixed;
+    padding: 1em;
+    width: 100%;
+    height: 2em;
+    bottom: 0;
+    line-height: 2;
+}
+
+frame-footer > button.config
+{
+    position: absolute;
+    right: 3em;
+    top: -2.5em;
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+}
+
+frame-footer > button.config > i
+{
+    font-size: 3em;
+}
+
+clock-widget
+{
+    position: relative;
+    display: block;
+    width: 10em;
+    text-align: center;
+}
+
+
+route > div
+{
+    padding: 0.5em 2em;
+}
+
+@media (max-width: 780px)
+{
+    frame-header > h1
+    {
+        font-size: 2em;
+    }
+
+    frame-header > nav
+    {
+        left: 0;    
+        padding: 0.4em 1em; 
+        font-size: 1.1em;
+    }
+
+    frame-header > nav > a
+    {
+        padding: 0 0.5em;
+        padding-bottom: 0.2em;
+    }
+
+    frame-header .clock
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 620px) 
+{
+    frame-header clock-widget
+    {
+        display: none;
+    }
+
+    frame-footer > .info
+    {
+        display: none;
+    }
+}
+
+
+
+
